@@ -85,7 +85,7 @@ listen:
     captcha: true
     {% endif %}
     {%- if env['EJABBERD_HTTPS'] == "true" %}
-    tls: true
+    tls: false
     tls_compression: false
     ciphers: "{{ env.get('EJABBERD_CIPHERS', 'HIGH:!aNULL:!3DES') }}"
     {%- if env.get('EJABBERD_DHPARAM', false) == "true" %}
@@ -98,7 +98,7 @@ listen:
     request_handlers:
       "": mod_http_upload
     {%- if env['EJABBERD_HTTPS'] == "true" %}
-    tls: true
+    tls: false
     tls_compression: false
     ciphers: "{{ env.get('EJABBERD_CIPHERS', 'HIGH:!aNULL:!3DES') }}"
     {%- if env.get('EJABBERD_DHPARAM', false) == "true" %}
@@ -333,7 +333,7 @@ modules:
   mod_http_upload:
     docroot: "/opt/ejabberd/upload"
     {%- if env['EJABBERD_HTTPS'] == "true" %}
-    put_url: "https://@HOST@:5443"
+    put_url: "http://@HOST@:5443"
     {%- else %}
     put_url: "http://@HOST@:5443"
     {% endif %}
