@@ -337,6 +337,10 @@ modules:
     {%- else %}
     put_url: "http://@HOST@:5443"
     {% endif %}
+    custom_headers:
+      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Methods": "GET, POST, PUT, OPTIONS"
+      "Access-Control-Allow-Headers": "content-type"
   mod_http_upload_quota:
     max_days: {{ env.get('EJABBERD_UPLOAD_QUOTA_MAX_DAYS', 10) }}
   mod_last: {}
