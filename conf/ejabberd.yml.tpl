@@ -337,6 +337,7 @@ modules:
     {%- else %}
     put_url: "http://@HOST@:5443"
     {% endif %}
+    thumbnail: true
     custom_headers:
       "Access-Control-Allow-Origin": "*"
       "Access-Control-Allow-Methods": "GET, POST, PUT, OPTIONS"
