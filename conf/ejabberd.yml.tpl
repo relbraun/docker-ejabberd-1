@@ -75,8 +75,8 @@ listen:
   -
     port: 5280
     module: ejabberd_http
-    request_handlers:
-      "/ws": ejabberd_http_ws
+    
+     
     ##  "/pub/archive": mod_http_fileserver
     web_admin: true
     http_bind: true
@@ -97,6 +97,7 @@ listen:
     module: ejabberd_http
     request_handlers:
       "/upload": mod_http_upload
+      "/ws": ejabberd_http_ws
     {%- if env['EJABBERD_HTTPS'] == "true" %}
     tls: false
     tls_compression: false
