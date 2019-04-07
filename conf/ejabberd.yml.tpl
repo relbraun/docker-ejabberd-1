@@ -350,10 +350,10 @@ modules:
     use_cache: true
   mod_muc:
     host: "conference.@HOST@"
-    access: muc
-    access_create: muc_create
-    access_persistent: muc_create
-    access_admin: muc_admin
+    access: all
+    access_create: all
+    access_persistent: all
+    access_admin: all
     history_size: 50
     default_room_options:
       persistent: true
