@@ -1,0 +1,12 @@
+ejabberd:
+  build: .
+  ports:
+    - 5222:5222
+    - 5443:5443
+    - 5269:5269
+    - 5280:5280
+  environment:
+    - ERLANG_NODE=jabberddq
+    - XMPP_DOMAIN=localhost
+    - EJABBERD_ADMINS=admin@localhost
+    - EJABBERD_USERS=admin@localhost:12345
