@@ -6,8 +6,6 @@ ejabberd:
     - 5269:5269
     - 5280:5280
   environment:
-    - ERLANG_NODE=jabberd5
-    - XMPP_DOMAIN=localhost
     - EJABBERD_ADMINS=admin@localhost
     - EJABBERD_USERS=admin@localhost:12345
   volumes:

@@ -6,11 +6,11 @@ ARG EJABBERD_GID=999
 
 ENV EJABBERD_BRANCH=18.09 \
     EJABBERD_USER=ejabberd \
-    EJABBERD_HTTPS=true \
-    EJABBERD_STARTTLS=true \
-    EJABBERD_S2S_SSL=true \
+    EJABBERD_HTTPS=false \
+    EJABBERD_STARTTLS=false \
+    EJABBERD_S2S_SSL=false \
     EJABBERD_HOME=/opt/ejabberd \
-    EJABBERD_DEBUG_MODE=false \
+    EJABBERD_DEBUG_MODE=true \
     HOME=$EJABBERD_HOME \
     PATH=$EJABBERD_HOME/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/sbin \
     DEBIAN_FRONTEND=noninteractive \
@@ -143,7 +143,7 @@ USER $EJABBERD_USER
 # Set workdir to ejabberd root
 WORKDIR $EJABBERD_HOME
 
-VOLUME ["$EJABBERD_HOME/database", "$EJABBERD_HOME/ssl", "$EJABBERD_HOME/backup", "$EJABBERD_HOME/upload"]
+VOLUME ["$EJABBERD_HOME/database", "$EJABBERD_HOME/ssl", "$EJABBERD_HOME/backup", "$EJABBERD_HOME/upload",  "/var/log/ejabberd"]
 EXPOSE 4560 5222 5269 5280 5443
 
 CMD ["start"]

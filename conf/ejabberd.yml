@@ -83,7 +83,7 @@ acl:
       - "127.0.0.0/8"
   admin:
     user:
-      - "admin@RBLT0229"
+      - "admin@localhost"
       - "gavriel@localhost"
 
 access_rules:
@@ -227,8 +227,8 @@ modules:
   mod_vcard_xupdate: {}
   mod_version:
     show_os: false
-  mod_hello_world: {}
-  mod_add_rosteritems: {}
+  ##mod_hello_world: {}
+  ##mod_add_rosteritems: {}
 
 ### Local Variables:
 ### mode: yaml
